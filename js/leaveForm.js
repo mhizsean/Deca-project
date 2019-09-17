@@ -81,11 +81,11 @@ $(document).ready(function(){
             success: function(response){
                 if(response.length) {
                     $('.errorMessage').html('Login successful');
-                    $('.');
+                    localStorage.setItem('email', logemail);
                     //if log in is successful
-                    window.location.assign('');
+                    window.location.assign('leaveForm.html');
                 } else {
-                    $('.errorMessage').html('email or password foesnt match')
+                    $('.errorMessage').html('email or password do not match')
                 }
             }
         })
