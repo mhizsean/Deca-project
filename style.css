@@ -73,7 +73,7 @@ input {
     border: 2px solid;
 }
 
-.signup  {
+.subSignUp  {
     width: 200px;
     height: 40px;
     background-color: aquamarine;
@@ -89,15 +89,18 @@ input {
     margin-bottom: 5px;
     font-weight: 300;
 }
-#login {
-    width: 100px;
+
+.form-container .login {
+    display: none;
+}
+
+.loginBtn {
+    width: 200px;
     height: 40px;
-    background-color: rgb(4, 184, 124);
+    background-color: aqua;
     border: 1px solid black;
     color: black;
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: -100px;
-
 }
