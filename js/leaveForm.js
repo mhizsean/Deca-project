@@ -1,3 +1,14 @@
 $(document).ready(function(){
-    $()
+    $('.gotologin').click(function(){
+        $('.showsignup').fadeOut();
+    });
+    $('.gotologin').click(function(){
+        $('.login').fadeIn(2000);
+    })
+    $('.gotosignup').click(function(){
+        $('.login').fadeOut();
+    });
+    $('.gotosignup').click(function(){
+        $('.showsignup').fadeIn(2000);
+    })
 })
