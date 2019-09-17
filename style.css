@@ -84,6 +84,11 @@ input {
     text-transform: uppercase;
 }
 
+.form-container .or {
+    font-size: 20px; 
+    margin-bottom: 5px;
+    font-weight: 300;
+}
 #login {
     width: 100px;
     height: 40px;
@@ -93,5 +98,6 @@ input {
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
+    margin-bottom: -100px;
 
 }

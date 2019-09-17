@@ -26,17 +26,22 @@
             
         </div>
         <div class="form-container">
-            <p>LEAVE MANAAGENT SYSTEM | Sign Up</p>
-            <form action="" method="POST">
+            <p>LEAVE MANAGENT SYSTEM | Sign Up</p>
+            <form class="showsignup"  action="" method="POST">
                 <input type="text" name="fullname" id="fullname" placeholder="Full Name" required><br><br>
                 <input type="email" name="email" id="email" placeholder="Your Email" required><br><br>
                 <input type="text" name="department" id="department" placeholder="Your Department" required><br><br>
                 <input type="password" name="password" id="password" placeholder="passowrd" required><br><br>
-                <button class="signup">Sign Up</button>
-                <p>Already have an account?</p>
-                <button id="login">Log In</button>
+                <button class="signup">Sign Up</button><br>
+                <p class="or">Already have an account? <a href="#login">Log In</a> </p>
             </form>
 
+            <form class="showlogin" action="" method="POST">
+                <input type="email" id="email" placeholder="Enter Your Email" required><br>
+                <input type="password" id="passsword" placeholder="Enter Password" required> <br>
+                <button class="login"> Log In</button>
+                <p>Dont have an account? <a href="#signup">Sign Up</a> </p>
+            </form>
 
         </div>
     </div>
