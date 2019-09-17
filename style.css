@@ -84,6 +84,14 @@ input {
     text-transform: uppercase;
 }
 
+.subSignUp:hover {
+    background-color: rgb(119, 173, 173);
+}
+.form-container .errorMessage {
+    font-size: 20px;
+    color: red;
+
+}
 .form-container .or {
     font-size: 20px; 
     margin-bottom: 5px;
@@ -93,6 +101,7 @@ input {
 .form-container .login {
     display: none;
 }
+
 
 .loginBtn {
     width: 200px;
