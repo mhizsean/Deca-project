@@ -60,5 +60,34 @@ $(document).ready(function(){
                 }
             })
         }
+    });
+    //login form
+    $('.loginBtn').click(function(event){
+        event.preventDefault();
+        const logemail = $('#logemail').val();
+        const logpassword = $('#logpassword').val();
+        if (!logemail || !logpassword){
+            $('.errorMessage').html('Please fill in all fields');
+            return;
+        }
+        //to check if user is in database
+        $.ajax({
+            method:'GET', 
+            url: `http://localhost:3000/users?email=${logemail}&password=${logpasswword}`,
+            data:{
+                email: logemail,
+                password: logpassword,
+            },
+            success: function(response){
+                if(response.length) {
+                    $('.errorMessage').html('Login successful');
+                    $('.');
+                    //if log in is successful
+                    window.location.assign('');
+                } else {
+                    $('.errorMessage').html('email or password foesnt match')
+                }
+            }
+        })
     })
 });

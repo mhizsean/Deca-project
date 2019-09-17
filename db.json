@@ -1,6 +1,48 @@
 {
-    "users":[],
-    "post":[],
-    "comment":[] 
-
+  "users": [
+    {
+      "fullname": "Adeyi Esther",
+      "email": "adeyiesther01@gmail.com",
+      "department": "developer",
+      "password": "asdcfgvhbjnkn",
+      "id": 1
+    },
+    {
+      "fullname": "Adeyi Esther",
+      "email": "adeyiesther01@gmail.com",
+      "department": "developer",
+      "password": "gfdsdfg",
+      "id": 2
+    },
+    {
+      "fullname": "Adeyi Esther",
+      "email": "Estheradeyi@yahoo.com",
+      "department": "developer",
+      "password": "erwsedrtfgnhjm",
+      "id": 3
+    },
+    {
+      "fullname": "Adeyi Esther",
+      "email": "adeyiesther01@gmail.com",
+      "department": "developer",
+      "password": "hfcgvhbn",
+      "id": 4
+    },
+    {
+      "fullname": "jgddff",
+      "email": "giditalented@ovi.com",
+      "department": "developer",
+      "password": "cvnbvcxvbn",
+      "id": 5
+    },
+    {
+      "fullname": "jgddff",
+      "email": "hobehiujianbi@gmail.com",
+      "department": "developer",
+      "password": "wedfgbv",
+      "id": 6
+    }
+  ],
+  "post": [],
+  "comment": []
 }
