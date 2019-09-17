@@ -3,10 +3,95 @@ html, body {
     margin: 0;
 }
 
-.header {
-    background-color: black;
+.row{
+    height: 100px;
+    width: 100%;
 }
 
-.header .nav .ul .li  {
+.header {
+    background-color: black;
     color: white;
+}
+
+.column {
+    float: left;
+    padding: 15px;
+}
+
+img {
+    width: 200px;
+    height: 85px;
+    padding: 10px;
+}
+
+
+ .menu ul {
+    width: 250%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu ul li {
+    list-style: none;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu ul li a:hover {
+    color: aquamarine;
+}
+
+.form-container {
+   margin: 20px;
+   padding: 0px;
+   text-align: center;
+   width: 100%;
+}
+
+.form-container p {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+input {
+    width: 500px;
+    height: 45px;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid;
+}
+
+.signup  {
+    width: 200px;
+    height: 40px;
+    background-color: aquamarine;
+    border: 1px solid black;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#login {
+    width: 100px;
+    height: 40px;
+    background-color: rgb(4, 184, 124);
+    border: 1px solid black;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+
 }
