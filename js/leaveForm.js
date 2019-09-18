@@ -4,6 +4,21 @@ $(document).ready(function(){
     })
     $('.staff').click(function(){
         $('.login').fadeOut();
+    });
+    $('.admin').click(function(){
+        $('.showsignup').hide();
+    })
+    $('.admin').click(function(){
+        $('.admin-login-container').fadeIn();
+    });
+    $('.staff').click(function(){
+        $('.admin-login-container').hide();
+    });
+    $('.login').click(function(){
+        $('.admin-login-container').hide();
+    })
+    $('.admin').click(function(){
+        $('.login').hide();
     })
     $('.gotologin').click(function(){
         $('.showsignup').fadeOut();
