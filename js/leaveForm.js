@@ -1,5 +1,10 @@
 $(document).ready(function(){
-    
+    $('.staff').click(function(){
+        $('.showsignup').fadeIn();
+    })
+    $('.staff').click(function(){
+        $('.login').fadeOut();
+    })
     $('.gotologin').click(function(){
         $('.showsignup').fadeOut();
     });

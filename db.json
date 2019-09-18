@@ -4,43 +4,36 @@
       "fullname": "Adeyi Esther",
       "email": "adeyiesther01@gmail.com",
       "department": "developer",
-      "password": "asdcfgvhbjnkn",
+      "password": "1234567890",
       "id": 1
     },
     {
-      "fullname": "Adeyi Esther",
-      "email": "adeyiesther01@gmail.com",
+      "fullname": "chinedu",
+      "email": "wait@mail.com",
       "department": "developer",
-      "password": "gfdsdfg",
+      "password": "123455",
       "id": 2
     },
     {
-      "fullname": "Adeyi Esther",
-      "email": "Estheradeyi@yahoo.com",
+      "fullname": "Sadiq",
+      "email": "sadiq@mail.com",
       "department": "developer",
-      "password": "erwsedrtfgnhjm",
+      "password": "asdgh",
       "id": 3
     },
     {
-      "fullname": "Adeyi Esther",
-      "email": "adeyiesther01@gmail.com",
+      "fullname": "chinedu",
+      "email": "hobehiujianbi@gmail.com",
       "department": "developer",
-      "password": "hfcgvhbn",
+      "password": "zzzzzzzzzz",
       "id": 4
     },
     {
-      "fullname": "jgddff",
-      "email": "giditalented@ovi.com",
+      "fullname": "esther",
+      "email": "lets@gmail.com",
       "department": "developer",
-      "password": "cvnbvcxvbn",
+      "password": "12345667",
       "id": 5
-    },
-    {
-      "fullname": "jgddff",
-      "email": "hobehiujianbi@gmail.com",
-      "department": "developer",
-      "password": "wedfgbv",
-      "id": 6
     }
   ],
   "post": [],

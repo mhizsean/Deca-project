@@ -4,30 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Leave Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="">
-        <input type="text" name="fullname" id="fullname" placeholder="fullname">
+    <form action="" class="form-container-leave" method="">
+        <p>REQUEST FOR YOUR LEAVE</p>
+        <input type="text" name="fullname" id="fullname" placeholder="Full Name"> <br><br>
+        <input type="email" name="email" placeholder="Your Email"><br><br>
         
-        <select name="leave type" id="#leave">
-            <option value="1">Personal leave</option>
-            <option value="1">Maternity Leave</option>
-            <option value="1">Child care</option>
-            <option value="">Administrative leave</option>
-            <option value="">Paternity Leave</option>
-            <option value="">Sick Leave</option>
-            <option value="">Adverse Weather</option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-        </select>
-        <input type="date">
+        <select name="leave type" id="#leave" class="leave-form">
+            <option value="">Select leave type</option>
+            <option value="Personalleave">Personal leave</option>
+            <option value="MaternityLeave">Maternity Leave</option>
+            <option value="Child care">Child care</option>
+            <option value="Administrative leave">Administrative leave</option>
+            <option value="Paternity Leave">Paternity Leave</option>
+            <option value="Sick Leave">Sick Leave</option>
+            <option value="Adverse Weather">Adverse Weather</option>
+            <option value="">Volunteer Work</option>
+            <option value="">Leave to appear in a court as a witness</option>
+            <option value="">Pregnancy Disability</option>
+            <option value="">Child Birth</option>
+            <option value="">Parental Leave</option>
+            <option value="">Temporary Disability Leave</option>
+            <option value="">Religious Leave</option>
+            <option value="">Hardship Leave</option>
+        </select><br><br>
+        <!-- <>Enter a date range not more than 28days</> -->
+        <input type="date" max="" placeholder="start date"><br><br>
+        <input type="date" min="" placeholder="end date"><br><br>
+        <button class="apply-button">Apply</button>
+        <p></p>
     </form>
 </body>
 </html>
