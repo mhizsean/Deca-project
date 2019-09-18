@@ -8,6 +8,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+        <div class="row header">
+                <div class="column img">
+                    <a href="#index.html"><img src="https://res.cloudinary.com/dabboocbf/image/upload/v1568641813/Decagon/logo-light_z8804j.png" alt=""></a>
+                </div>
+                <div class="column menu">
+                    <ul>
+                        <!-- <li><a href="#policy">Policy</a> </li> -->
+                        <!-- <li><a href="#logIn">Log In</a> </li>
+                        <li><a href="#signup">Sign Up</a> </li> -->
+                        <!-- <li><a href="#" class="staff">Staff</a></li> -->
+                        <li><a href="#" class="status">Check Status</a></li>
+                        <li><a href="#" class="admin">LogOut</a></li>
+                        
+                    </ul>         
+                </div>               
+            </div>
     <form action="" class="form-container-leave" method="">
         <p>REQUEST FOR YOUR LEAVE</p>
         <input type="text" name="fullname" id="fullname" placeholder="Full Name"> <br><br>
@@ -22,18 +39,21 @@
             <option value="Paternity Leave">Paternity Leave</option>
             <option value="Sick Leave">Sick Leave</option>
             <option value="Adverse Weather">Adverse Weather</option>
-            <option value="">Volunteer Work</option>
-            <option value="">Leave to appear in a court as a witness</option>
-            <option value="">Pregnancy Disability</option>
-            <option value="">Child Birth</option>
-            <option value="">Parental Leave</option>
-            <option value="">Temporary Disability Leave</option>
-            <option value="">Religious Leave</option>
-            <option value="">Hardship Leave</option>
+            <option value="Volunteerwork">Volunteer Work</option>
+            <option value="Court Witness">Court Witness</option>
+            <option value="Pregnancydisability">Pregnancy Disability</option>
+            <option value="ChildBirth"> Child Birth</option>
+            <option value="Parental Leave">Parental Leave</option>
+            <option value="TemporaryDisabilityLeave">Temporary Disability Leave</option>
+            <option value="ReligiousLeave">Religious Leave</option>
+            <option value="HardshipLeave">Hardship Leave</option>
+            <option value="others">Others</option>
         </select><br><br>
         <!-- <>Enter a date range not more than 28days</> -->
-        <input type="date" max="" placeholder="start date"><br><br>
-        <input type="date" min="" placeholder="end date"><br><br>
+        <label for="">Start Date</label><br><br>
+        <input type="date" id="startdate" max="" placeholder="start date"><br><br>
+        <label for="">End Date</label><br><br>
+        <input type="date" min="" id="enddate" placeholder="end date"><br><br>
         <button class="apply-button">Apply</button>
         <p></p>
     </form>
