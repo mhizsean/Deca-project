@@ -106,6 +106,10 @@ input {
     display: none;
 }
 
+.admin-login-container {
+    display: none;
+}
+
 
 .loginBtn {
     width: 200px;
@@ -121,6 +125,24 @@ input {
 .loginBtn a {
     text-decoration: none;
     color:black;
+}
+
+.admin-login-container {
+    text-align: center;
+}
+.admin-login {
+    width: 180px;
+    height: 40px;
+    background-color: aqua;
+    border: 1px solid black;
+    color: black;
+    font-size: 25px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.admin-login:hover {
+    background-color: rgb(38, 214, 155);
 }
 
 .form-container-leave {
@@ -160,4 +182,10 @@ option {
 .form-container-leave .apply-button:hover {
     background-color: aquamarine;
 
+}
+
+.leave button {
+    padding: 30px;
+    background-color: aqua;
+    color: black;
 }
