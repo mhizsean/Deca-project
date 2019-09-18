@@ -81,46 +81,121 @@ $(document).ready(function(){
 
         
     });
+
+
     //login form
     $('.loginBtn').click(function(event){
         event.preventDefault();
         const logemail = $('#logemail').val();
         const logpassword = $('#logpassword').val();
-        // if (!logemail || !logpassword){
-        //     $('.errorMessage').html('Please fill in all fields');
-        //     return;
-        // } else {
-        //     $.ajax({
-        //         method: "GET",
-        //         url: ``,
-        //         data: {
-        //             email: logemail,
-        //             password: logpassword,
-        //         },
-        //         success: function(){
-        //             $('.errorMessage').append('login successful');
-        //         }
-        //     })
-        // }
-        //to check if user is in database
+
+        if (!logemail || !logpassword){
+            $('.errorMessage').html('Please fill in all fields');
+            
+        } 
         $.ajax({
-            method:'GET', 
-            url: `http://localhost:3000/users?email=${logemail}&password=${logpasswword}`,
-            data:{
+            method: "GET",
+            url: `http://localhost:3000/users?email=${logemail}&password=${logpassword}`,
+            data: {
                 email: logemail,
                 password: logpassword,
             },
-            success: function(response){
-                if(response.length) {
-                    $('.errorMessage').html('Login successful');
-                    localStorage.setItem('email', logemail);
-                    //if log in is successful
-                    window.location.assign('leaveForm.html');
-                    return;
-                } else {
-                    $('.errorMessage').html('email or password do not match')
-                }
+        success: function(response){
+            if(response.length){
+                localStorage.setItem('logemail', logemail);
+                window.location.assign('leaveForm.html');
+                
+            } else {
+                $.ajax({
+                    method: "POST",
+                    url: 'http://localhost:3000/users',
+                    data: {
+                        email: logemail,
+                        password: logpassword,
+                    },
+                    success: function(){
+                        localStorage.setItem('logemail', logemail);
+                        window.location.assign('leaveForm.html');
+                        return;
+                    }
+                })
             }
-        })
-    })
+        }
+        });
+        
+        //to check if user is in database
+        // $.ajax({
+        //     method:'GET', 
+        //     url: `http://localhost:3000/users?email=${logemail}&password=${logpasswword}`,
+        //     data:{
+        //         email: logemail,
+        //         password: logpassword,
+        //     },
+        //     success: function(response){
+        //         if(response.length) {
+        //             $('.errorMessage').html('Login successful');
+        //             localStorage.setItem('email', logemail);
+        //             //if log in is successful
+        //             window.location.assign('leaveForm.html');
+        //             return;
+        //         } else {
+        //             $('.errorMessage').html('email or password do not match')
+        //         }
+        //     }
+        // })
+    });
+
+
+
+    //Admin login 
+    $('.admin-login').click(function(event){
+        event.preventDefault();
+        const emailadmin = $('#emailadmin').val();
+        const passwordadmin = $('#passwordadmin').val();
+
+        if(!emailadmin || !passwordadmin) {
+            $('.messageAdmin').html('kindly fill in fields');
+        }
+        $.ajax({
+            method: 'GET',
+            url: `http://localhost:3000/admin?email=${emailadmin}&password=${passwordadmin}`,
+            data:{
+               emailadmin,
+              passwordadmin
+            },
+        success: function(response){
+            if(response.length){
+                localStorage.setItem('emailadmin', emailadmin);
+                window.location.assign('admin.html');
+            }
+        }
+        });
+
+    });
+
+
+
+    //apply form
+    $('.apply-button').click(function(event){
+        event.preventDefault();
+        const fullname = $('#fullname').val();
+        const email = $('#email').val();
+        const leave = $('#leave').val();
+        const startdate = $('#startdate').val();       
+        const enddate = $('#enddate').val();       
+    });
+
+    // $('.img').click(function(){
+    //     window.location.assign('admin.html');
+
+    // })
+
+    //LOGOUT BUTTON
+    $('.logoutBtn').click(function() {
+        //clear the localstorage and redirect to signup page
+        localStorage.clear();
+        $('.checkLogin').html('Kindly login');
+        window.location.assign('signup.html');
+      });
+
 });
