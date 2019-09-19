@@ -15,11 +15,8 @@
         </div>
         <div class="column menu">
             <ul>
-                <!-- <li><a href="#policy">Policy</a> </li> -->
-                <!-- <li><a href="#logIn">Log In</a> </li>
-                <li><a href="#signup">Sign Up</a> </li> -->
-                <!-- <li><a href="#" class="staff">Staff</a></li> -->
                 <li><a href="#" class="status">Check Status</a></li>
+                <li><a href="#" class="apply">Apply</a></li>
                 <li><a href="#" class="logout">LogOut</a></li>             
             </ul>         
         </div>               
@@ -28,9 +25,9 @@
     <form action="" class="form-container-leave" method="">
         <p>REQUEST FOR YOUR LEAVE</p>
         <input type="text" name="fullname" id="fullname" placeholder="Full Name"> <br><br>
-        <input type="email" name="email" placeholder="Your Email"><br><br>
+        <input type="email" name="email" id="email"  placeholder="Your Email"><br><br>
         
-        <select name="leave type" id="#leave" class="leave-form">
+        <select name="leave type" id="leave" class="leave-form">
             <option value="">Select leave type</option>
             <option value="Personalleave">Personal leave</option>
             <option value="MaternityLeave">Maternity Leave</option>
@@ -65,6 +62,18 @@
     <div>
         <h4 id="request" class="request">Request Pending...</h4>
     </div>
+
+    <div class="check-status">
+        <button class="view-request">VIEW REQUEST</button>
+
+    </div>
+    
+
+     <div id="dis" class="dis">
+           <!-- <button class="btn">Delete Request</button> -->
+    </div>
+    
+    
     <script src="./js//jquery.js"></script>
     <script src="./js/leaveForm.js"></script>
     
