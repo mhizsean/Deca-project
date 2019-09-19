@@ -32,6 +32,31 @@ $(document).ready(function(){
     $('.gotosignup').click(function(){
         $('.showsignup').fadeIn(2000);
     });
+    $('.apply-button').click(function(){
+        $('.form-container-leave').fadeOut();
+    });
+    $('.apply-button').click(function(){
+        $('.request').fadeIn();
+    });
+    $('.policy').click(function(){
+        $('.showsignup').hide();
+    });
+    $('.policy').click(function(){
+        $('.login').hide();
+    });
+    $('.policy').click(function(){
+        $('.policy-container').show();
+    });
+    $('.policy').click(function(){
+        $('.head').hide();
+    });
+    $('.showsignup').click(function(){
+        $('.head').show();
+    })
+    $('.showsignup').click(function(){
+        $('.form-steps').hide();
+    })
+    
 
     //signup function 
     $('.subSignUp').click(function(event){
@@ -45,7 +70,7 @@ $(document).ready(function(){
             $('.errorMessage').html('Kindly fill in all fields');
             return;
         }
-        //sign in
+        //sign up
         //ajax
         $.ajax({
             method: "GET",
@@ -54,7 +79,6 @@ $(document).ready(function(){
                 email,
             },
         success: function(response){
-                //if user already exist 
         if(response.length){
             $('.errorMessage').append('User Already Exist')
         } else {
@@ -123,26 +147,6 @@ $(document).ready(function(){
         }
         });
         
-        //to check if user is in database
-        // $.ajax({
-        //     method:'GET', 
-        //     url: `http://localhost:3000/users?email=${logemail}&password=${logpasswword}`,
-        //     data:{
-        //         email: logemail,
-        //         password: logpassword,
-        //     },
-        //     success: function(response){
-        //         if(response.length) {
-        //             $('.errorMessage').html('Login successful');
-        //             localStorage.setItem('email', logemail);
-        //             //if log in is successful
-        //             window.location.assign('leaveForm.html');
-        //             return;
-        //         } else {
-        //             $('.errorMessage').html('email or password do not match')
-        //         }
-        //     }
-        // })
     });
 
 
@@ -182,20 +186,51 @@ $(document).ready(function(){
         const email = $('#email').val();
         const leave = $('#leave').val();
         const startdate = $('#startdate').val();       
-        const enddate = $('#enddate').val();       
+        const enddate = $('#enddate').val();   
+        const description = $('#description').val();
+        
+        if (!fullname || !email || !leave || !startdate || !enddate || !description){
+            alert('fill in blanks');
+           
+        }
+        $.ajax({
+            method: "POST",
+            url: 'http://localhost:3000/apply',
+            data: {
+                fullname,
+                email,
+                leave,
+                startdate,
+                enddate,
+                description,
+            },
+            success: function(response){
+                if(response.length){
+                $('.apply-button').click(function(){
+                    $('.form-container-leave').fadeOut();
+                })
+                $('.apply-button').click(function(){
+                    $('.request').fadeIn();
+                })
+                
+                window.location.assign('#request');
+                return;
+                }
+            }
+        })
+        
+        
     });
 
-    // $('.img').click(function(){
-    //     window.location.assign('admin.html');
+    //admin request approval
 
-    // })
 
     //LOGOUT BUTTON
-    $('.logoutBtn').click(function() {
+    $('.logout').click(function() {
         //clear the localstorage and redirect to signup page
         localStorage.clear();
-        $('.checkLogin').html('Kindly login');
-        window.location.assign('signup.html');
-      });
+        // $('.checkLogin').html('Kindly login');
+        window.location.assign('index.html');
+    });
 
 });
