@@ -2,38 +2,41 @@
   "users": [
     {
       "fullname": "Adeyi Esther",
-      "email": "adeyiesther01@gmail.com",
+      "email": "giditalented@ovi.com",
       "department": "developer",
-      "password": "1234567890",
+      "password": "yes",
       "id": 1
     },
     {
-      "fullname": "chinedu",
-      "email": "wait@mail.com",
-      "department": "developer",
-      "password": "123455",
+      "email": "giditalented@ovi.com",
       "id": 2
+    }
+  ],
+  "admin": [
+    {
+      "fullname": "Adeyi Esther",
+      "email": "adeyiesther01@gmail.com",
+      "department": "administration",
+      "password": "password",
+      "id": 1
+    }
+  ],
+  "apply": [
+    {
+      "fullname": "Adeyi Esther",
+      "startdate": "2019-09-24",
+      "enddate": "2019-09-27",
+      "description": "for a good reason",
+      "id": 1
     },
     {
-      "fullname": "Sadiq",
-      "email": "sadiq@mail.com",
-      "department": "developer",
-      "password": "asdgh",
-      "id": 3
-    },
-    {
-      "fullname": "chinedu",
-      "email": "hobehiujianbi@gmail.com",
-      "department": "developer",
-      "password": "zzzzzzzzzz",
-      "id": 4
-    },
-    {
-      "fullname": "esther",
-      "email": "lets@gmail.com",
-      "department": "developer",
-      "password": "12345667",
-      "id": 5
+      "fullname": "Adeyi Esther",
+      "email": "giditalented@ovi.com",
+      "leave": "ChildBirth",
+      "startdate": "2019-09-20",
+      "enddate": "2019-09-23",
+      "description": "djk rgfbmm ",
+      "id": 2
     }
   ],
   "post": [],
