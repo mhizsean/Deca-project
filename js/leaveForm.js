@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+    //Jquery effects
     $('.staff').click(function(){
         $('.showsignup').fadeIn();
     })
@@ -52,13 +54,37 @@ $(document).ready(function(){
     });
     $('.showsignup').click(function(){
         $('.head').show();
-    })
-    $('.showsignup').click(function(){
-        $('.form-steps').hide();
-    })
+    });
     
+    $('.staff').click(function(){
+        $('.policy-container').hide();
+    });
+    $('.staff').click(function(){
+        $('.head').show();
+    });
+    $('.admin').click(function(){
+        $('.policy-container').hide();
+    });
+    $('.admin').click(function(){
+        $('.head').show();
+    })
+    $('.policy').click(function(){
+        $('.admin-login-container').hide();
+    })
 
-    //signup function 
+    $('.apply').click(function(){
+        $('.form-container-leave').show();
+    });
+    $('.status').click(function(){
+        $('.form-container-leave').hide();
+    })
+    $('.apply').click(function(){
+        $('.check-status').hide();
+    })
+    $('.status').click(function(){
+        $('.check-status').show();
+    })
+    //signup function =======================================================================================
     $('.subSignUp').click(function(event){
         event.preventDefault();
         const fullname = $('#fullname').val();
@@ -107,7 +133,7 @@ $(document).ready(function(){
     });
 
 
-    //login form
+    //login form===================================================================================
     $('.loginBtn').click(function(event){
         event.preventDefault();
         const logemail = $('#logemail').val();
@@ -121,8 +147,8 @@ $(document).ready(function(){
             method: "GET",
             url: `http://localhost:3000/users?email=${logemail}&password=${logpassword}`,
             data: {
-                email: logemail,
-                password: logpassword,
+                email:logemail,
+                password:logpassword
             },
         success: function(response){
             if(response.length){
@@ -151,7 +177,7 @@ $(document).ready(function(){
 
 
 
-    //Admin login 
+    //Admin login ==========================================================================
     $('.admin-login').click(function(event){
         event.preventDefault();
         const emailadmin = $('#emailadmin').val();
@@ -206,14 +232,15 @@ $(document).ready(function(){
             },
             success: function(response){
                 if(response.length){
+                
+                
+                window.location.assign('#request');
                 $('.apply-button').click(function(){
                     $('.form-container-leave').fadeOut();
                 })
                 $('.apply-button').click(function(){
                     $('.request').fadeIn();
                 })
-                
-                window.location.assign('#request');
                 return;
                 }
             }
@@ -222,7 +249,68 @@ $(document).ready(function(){
         
     });
 
-    //admin request approval
+
+    //display leave request 
+    $('.view-request').click(function(event){
+        event.preventDefault();
+        const email = localStorage.getItem('logemail');
+        //alert(email);
+        
+
+        $.ajax({
+            method: 'GET',
+            url: `http://localhost:3000/apply?email=${email}`,
+            data: {
+               email
+            },
+            success: function(resp){
+                if(resp.length){
+                    let fullname = resp[0]['fullname'];
+                    let leavetype = resp[0]['leave']
+                    let disc = resp[0]['description'];
+                    let start = resp[0]['startdate'];
+                    let end = resp[0]['enddate'];
+                   // alert(fullname);
+                    let disp = "";
+                    disp +='<p>Name:'+fullname+'</p>';
+                    disp +='<p>Leave Type:'+leavetype+'</p>';
+                    disp +='<p>Leave Description:'+disc+'</p>';
+                    disp +='<p>Start Date:'+start+'</p>';
+                    disp +='<p>End Date:'+end+'</p>';
+                    disp +='<button class="btn">Delete Request</button>'
+
+                   $('#dis').html(disp);
+                }
+            }
+        });
+    });
+
+    $('.btn').click(function(){
+        $('#dis').detach();
+    });
+
+    //admin view request approval
+    $('.leave-btn').click(function(event){
+        event.preventDefault();
+        const fullname = $('#fullname').val();
+        const leave = $('#leave').val();
+        const startdate =$('#startdate').val();
+        const enddate = $('#enddate').val();
+        const description = $('#description').val();
+        
+
+        $.ajax({
+            method:'GET',
+            url: `http://localhost:3000/apply?fullname=${fullname}&leave=${leave}&startdate=${startdate}&enddate=${enddate}&description=${description}`,
+            data: {
+                fullname,
+                leave,
+                startdate,
+                enddate,
+                description,
+            }
+        })
+    })
 
 
     //LOGOUT BUTTON
@@ -232,5 +320,8 @@ $(document).ready(function(){
         // $('.checkLogin').html('Kindly login');
         window.location.assign('index.html');
     });
+
+
+
 
 });
