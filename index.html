@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Leave Management system</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div>
+        <div class="row header">
+            <div class="column img">
+                <a href="#"><img src="https://res.cloudinary.com/dabboocbf/image/upload/v1568641813/Decagon/logo-light_z8804j.png" alt=""></a>
+            </div>
+            <div class="column menu">
+                <ul>
+                    <li><a href="#policy" class="policy">Policy</a> </li>
+                    <!-- <li><a href="#logIn">Log In</a> </li>
+                    <li><a href="#signup">Sign Up</a> </li> -->
+                    <li><a href="#staff" class="staff">Staff </a></li>
+                    <li><a href="#admin" class="admin">Admin</a></li>
+                    
+                </ul>         
+            </div>
+            
+        </div>
+        <div>
+           
+        </div>
+        <div class="form-steps">
+            <h2>LEAVE MANAGEMENT SYSTEM</h2>
+            <p>steps in filling the form</p>
+            <ol>
+                <p>as a staff</p>
+                <li>click on staff at the navigation bar</li>
+                <li>if you dont have an account, please kindly signup</li>
+                <li>click login below signup if you already have an account</li>
+                <li>fill the leave request form</li>
+                <li>fill all boxes</li>
+                <li>Give a reasonable and brief description of your request and why you think it should be granted.</li>
+            </ol>
+
+            <h4>As an admin, please login with the generated user login on the companies website</h4>
+        </div>
+        <div class="policy-container">
+            <h1>LEAVE MANAGENT SYSTEM | COMPANY'S POLICY</h1>
+            <h2></h2>
+            <p>Please read carefully so as not fill your request form wrongly...</p>
+            <p>Our company stands out amongst alot, and our employee to management relationship is the number one relationship. <br> 
+            As part of the what companies are to do, leave is one part, and this compnay's policy will help you decide on how <br>
+             to plan your leave, no matter the type you are requesting for.</p><br>
+            <p>Regardless of what your leave request might be about, every employee is entitled to 28 working days, of which <br>
+               it can be split anyhow you want it, but shouldnt exceed 28days, except in cases of emergencies. </p>
+            <p>However, the administrator will go thhrough your supervisor in order to grant your request. <br> 
+            In a case where you have pending jobs, the leave request won't be granted. Another case in which more than <br>
+            2 people or more from ypur department already requested for leave and it happens to fall within the date you also <br>
+            picked, the leave will be granted based on a reasonable reason or a first come first serve basis.</p>
+            <p>Please, kindly click on the staff link to get redirected to sign up/log in. Thanks for your usual coporation.</p>
+            <p><em>signed: <b>MANAGEMENT.</b></em></p>
+
+        </div>
+        <div class="form-container">
+            <p class="head">LEAVE MANAGEMENT SYSTEM</p>
+            <form class="showsignup"  action="" method="POST">
+                <input type="text" name="fullname" id="fullname" placeholder="Full Name" required><br><br>
+                <input type="email" name="email" id="email" placeholder="Your Email" required><br><br>
+                <input type="text" name="department" id="department" placeholder="Your Department" required><br><br>
+                <input type="password" name="password" id="password" placeholder="passowrd" required><br><br>
+                <button class="subSignUp"><a href="leaveForm.html"></a> Sign Up</button><br>
+                <p class="errorMessage"></p>
+                <p class="or">Already have an account? <a href="#login" class="gotologin">Log In</a> </p>
+            </form>
+
+            <form id="#login" class="login" action="" method="POST">
+                <input type="email" name="logemail" id="logemail" placeholder="Enter Your Email" required><br><br>
+                <input type="password" name="logpassword" id="logpasssword" placeholder="Enter Password" required> <br><br>
+                <p class="errorMessage"></p>
+                <button class="loginBtn"><a href="#">Log In</a> </button>
+                <p class="or">Dont have an account? <a href="#signup" class="gotosignup">Sign Up</a> </p>
+            </form>
+
+            <form action="" class="admin-login-container">
+                <input type="email" id="emailadmin" placeholder="email"><br><br>
+                <input type="password" name="" id="passwordadmin" placeholder="password"><br><br>
+                <button class="admin-login" ><a href=""></a> log in</button>
+                <p class="messageAdmin"></p>
+            </form>
+
+        </div> 
+    </div>
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/leaveForm.js"></script>
+</body>
+</html>
