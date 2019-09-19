@@ -143,6 +143,13 @@ input {
     display: none;
 }
 
+.form-container-leave {
+    display: none;
+}
+
+.form-steps {
+    display: none;
+}
 .head {
     display: none;
 }
@@ -230,6 +237,11 @@ option {
 
 }
 
+.form-container-leave label {
+    font-size: 21px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
 .leave button {
     width: 360px;
     padding: 30px;
@@ -265,3 +277,35 @@ textarea {
     text-align: center;
 }
 
+.check-status {
+    width: 250px;
+    height: 70px;
+    margin-left: 800px;
+    margin-top: 100px;
+    text-align: center;
+    
+}
+
+.check-status button {
+    background-color: greenyellow;
+    color: black;
+    width: 250px;
+    height: 70px;
+    font-size: 28px;
+    font-weight: 600;
+    border: 2px solid black;
+}
+
+.check-status button:hover {
+    background-color: green;
+}
+
+.dis {
+    width: 500px;
+    height: 500px;
+    background-color: bisque;
+    color: black;
+    font-size: 25px;
+    text-transform: uppercase;
+    text-align: left;
+}
