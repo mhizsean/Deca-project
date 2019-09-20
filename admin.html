@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <div class="row header">
@@ -15,19 +16,149 @@
         <div class="column menu">
             <ul>
 
-                <li><a href="#" class="admin">Leave</a></li>
                 <li><a href="#" class="logout">LogOut</a></li>
                 
             </ul>         
         </div>               
     </div>
-    <div class="">
+    <div>
         <p class="logged">Logged in as an admin</p> 
     </div>
+    
 
     <div class="leave">
         <button class="leave-btn">View Leave Requests</button>
     </div>
+   
+    <div class="request_result" >
+        <table>
+            <!-- <tr>
+                <th>full name</th>
+                <th>email</th>
+                <th>leave</th>
+                <th>startdate</th>
+                <th>enddate</th>
+                <th>description</th>
+                <th>Grant</th>
+            </tr> -->
+        </table>
+    </div><br>
+    <br><br>
+    <div class="view_one">
+
+    </div>
+
+    <footer>
+        <p className="copyright text-muted"> &copy; 2019 Decagon | SQ004 | ADEYI ESTHER. All rights reserved.</p>  
+    </footer>
     
+    <script src="js/jquery.js"></script>
+    <script src="js/leaveForm.js"></script>
+
+    <script>
+        //admin view request approval
+    $('.leave-btn').click(function(event){
+        event.preventDefault();
+        
+        let table ='<table>';
+
+        $.ajax({
+            method:'GET',
+            url: `http://localhost:3000/apply`,
+            success: function(resp){
+              for(i in resp){
+                 table  +='<tr><td>'+resp[i].fullname+'</td><td>'+resp[i].email+'</td><td>'+resp[i].leave+'</td><td>'+resp[i].startdate+'</td><td>'+resp[i].enddate+'</td><td>'+resp[i].description+'</td><td><a  onclick=getSingle('+resp[i].id+') class ="display_one"  href="#">view</a></td><td><button><a  onclick=getSingle('+resp[i].id+') class ="approve"  href="#">Approve</a></button></td><td><button><a onclick=getSingle('+resp[i].id+') class ="decline"  href="#">Decline</a></button></td></tr>';
+              }
+              table +='</table>';
+              $('.request_result').html(table);
+              
+            }
+
+        });
+    });
+
+
+    //display one result
+   function getSingle(data){
+    $.ajax({
+         method:'GET',
+         url: `http://localhost:3000/apply?id=${data}`,
+        data:{
+             data:data
+         },
+         success: function(resp){
+             if(resp.length){
+                $('.display_one').click(function(event){
+        event.preventDefault();
+        
+        let table ='<table>';
+
+        $.ajax({
+            method:'GET',
+            url: `http://localhost:3000/apply`,
+            success: function(resp){
+              
+                 table  +='<tr><td>'+resp[0].fullname+'</td><td>'+resp[0].email+'</td><td>'+resp[0].leave+'</td><td>'+resp[0].startdate+'</td><td>'+resp[0].enddate+'</td><td>'+resp[0].description+'</td><td><a  onclick=getSingle('+resp[0].id+') class ="display_one"  href="#">view</a></td><td><button><a  onclick=doApprove('+resp[0].id+') class ="approve"  href="#">Approve</a></button></td><td><button><a onclick=doDecline('+resp[0].id+') class ="decline"  href="#">Decline</a></button></td></tr>';
+              
+              table +='</table>';
+              $('.view_one').html(table);
+              
+            }
+
+        });
+    });
+    }
+           
+    }
+        
+
+    });
+
+   }
+
+   function doApprove(data){
+    $.ajax({
+         method:'PATCH',
+         url: `http://localhost:3000/apply?id=${data}`,
+        data:{
+             data:data
+         },
+         success: function(resp){
+             if(resp.length){
+                $('.display_one').click(function(event){
+        event.preventDefault();
+        
+    });
+    }
+           
+    }
+        
+
+    });
+
+   }
+
+   function doDecline(data){
+    $.ajax({
+         method:'PATCH',
+         url: `http://localhost:3000/apply?id=${data}`,
+        data:{
+             data:data
+         },
+         success: function(resp){
+             if(resp.length){
+                $('.display_one').click(function(event){
+        event.preventDefault();
+        
+    });
+    }
+           
+    }
+        
+
+    });
+
+   }
+    </script>
 </body>
 </html>

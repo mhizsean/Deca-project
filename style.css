@@ -51,12 +51,12 @@ img {
     color: aquamarine;
 }
 
-.form-steps p {
-    text-align: left;
-    font-size: 30px;
-    margin-left: 35px;
-    text-transform: capitalize;
+
+.form-steps {
+    margin: 35px;
+    font-size: 20px;
 }
+
 
 .form-steps ol {
     text-align: left;
@@ -64,18 +64,12 @@ img {
     margin: 35px;    
 
 }
-
-.form-steps ol p {
-    text-transform: uppercase;
-    font-size: 25px;
-    font-weight: 600;
-
+.form-steps p {
+    text-align: left;
+    font-size: 30px;
+    margin-left: 35px;
+    text-transform: capitalize;
 }
-.form-steps h4 {
-    margin: 35px;
-    font-size: 20px;
-}
-
 .form-container {
    margin: 20px;
    padding: 0px;
@@ -147,12 +141,11 @@ input {
     display: none;
 }
 
-.form-steps {
-    display: none;
-}
 .head {
     display: none;
 }
+
+
 
 .policy-container h1 {
     font-size: 38px;
@@ -272,8 +265,7 @@ textarea {
     background-color: aquamarine;
     color: black;
     font-size: 28px;
-    margin-top: -2px;
-    padding: 10px;
+
     text-align: center;
 }
 
@@ -303,9 +295,29 @@ textarea {
 .dis {
     width: 500px;
     height: 500px;
-    background-color: bisque;
     color: black;
     font-size: 25px;
     text-transform: uppercase;
     text-align: left;
 }
+
+table {
+    width: 1500px;
+    color: rgb(14, 14, 14);
+    border: 1px solid green;
+    font-size: 20px;
+}
+
+table, tr, th, td {
+    border: 1px solid black;
+   border-collapse: collapse;
+}
+footer {
+    height:30px;
+    background-color: black;
+    color: gray;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 650px;
+}
+

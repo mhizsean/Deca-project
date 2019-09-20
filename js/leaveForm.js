@@ -83,7 +83,35 @@ $(document).ready(function(){
     })
     $('.status').click(function(){
         $('.check-status').show();
+    });
+    $('.policy').click(function(){
+        $('.form-steps').hide();
+    });
+    $('.img').click(function(){
+        $('.form-steps').show();
     })
+    $('.img').click(function(){
+        $('.policy-container').hide();
+    })
+    $('.img').click(function(){
+        $('.showsignup').hide();
+    })
+    $('.img').click(function(){
+        $('.login').hide();
+    })
+    $('.img').click(function(){
+        $('.head').hide();
+    })
+    $('.img').click(function(){
+        $('.admin-login-container').hide();
+    })
+    $('.staff').click(function(){
+        $('.form-steps').hide();
+    })
+    $('.admin').click(function(){
+        $('.form-steps').hide();
+    })
+
     //signup function =======================================================================================
     $('.subSignUp').click(function(event){
         event.preventDefault();
@@ -141,7 +169,8 @@ $(document).ready(function(){
 
         if (!logemail || !logpassword){
             $('.errorMessage').html('Please fill in all fields');
-            
+            return;
+          
         } 
         $.ajax({
             method: "GET",
@@ -235,12 +264,7 @@ $(document).ready(function(){
                 
                 
                 window.location.assign('#request');
-                $('.apply-button').click(function(){
-                    $('.form-container-leave').fadeOut();
-                })
-                $('.apply-button').click(function(){
-                    $('.request').fadeIn();
-                })
+                
                 return;
                 }
             }
@@ -290,28 +314,6 @@ $(document).ready(function(){
     });
 
     //admin view request approval
-    $('.leave-btn').click(function(event){
-        event.preventDefault();
-        const fullname = $('#fullname').val();
-        const leave = $('#leave').val();
-        const startdate =$('#startdate').val();
-        const enddate = $('#enddate').val();
-        const description = $('#description').val();
-        
-
-        $.ajax({
-            method:'GET',
-            url: `http://localhost:3000/apply?fullname=${fullname}&leave=${leave}&startdate=${startdate}&enddate=${enddate}&description=${description}`,
-            data: {
-                fullname,
-                leave,
-                startdate,
-                enddate,
-                description,
-            }
-        })
-    })
-
 
     //LOGOUT BUTTON
     $('.logout').click(function() {
